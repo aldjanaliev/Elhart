@@ -62,6 +62,17 @@
   }
 }
 @media screen and (max-width: 980px) {
+  .section_wrap{
+    padding: 15px 0;
+  }
+  .section_in-title{
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+  body{
+    line-height: 21px;
+    font-size: 14px;
+  }
   .container{
     padding: 0 20px;
   }
@@ -207,6 +218,14 @@
   .breadcrumbs-wrap{
     margin-top: 65px;
     padding: 15px 0 20px;
+  }
+
+  .policy_txt{
+    padding-bottom: 15px;
+  }
+  .policy_desc{
+    font-size: 16px;
+    padding: 20px 0 15px;
   }
 }
 @media screen and (min-width: 790px) {

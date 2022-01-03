@@ -157,8 +157,18 @@ li {
 .slick-dots .slick-active button{
   background: #02906D;
 }
+.section_wrap{
+  padding: 30px 0;
+}
+.section_in-title{
+  font-family: "HeliosCondBold", arial, sans-serif;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-bottom: 30px; 
+}
 body {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 21px;
   color: #032019;
   width: 100%;
@@ -442,7 +452,7 @@ header {
 
 /*========== breadcrumbs ===========*/
 .breadcrumbs-wrap{
-  padding: 45px 0  55px;
+  padding: 45px 0  25px;
 }
 .breadcrumbs{
   display: flex;
@@ -476,7 +486,6 @@ a.breadcrumbs_link:hover{
   background: url(../img/ic_breadcrumbs.svg) no-repeat;
   background-size: cover;
 }
-
 
 /*========== footer ===========*/
 footer{
@@ -538,4 +547,22 @@ footer{
 .confidentiality-link{
   display: inline-block;
   margin-left: 50px;
+}
+
+
+/*====== policy ========*/
+.policy_txt{
+  color: rgba(20, 20, 20, 0.7);
+  padding-bottom: 20px;
+}
+.policy_desc{
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 30px 0 25px;
+}
+.policy_list li::before{
+  content: '-';
+  display: inline-block;
+  padding-right: 5px;
 }

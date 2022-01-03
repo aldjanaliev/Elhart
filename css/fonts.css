@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'HeliosCondBold';
+  src: url('../fonts/Helios/ofont.ru_Helios Cond.eot');
+  src: url('../fonts/Helios/ofont.ru_Helios Cond.eot?#iefix') format('embedded-opentype');
+  src: url('../fonts/Helios/HeliosCond-Bold.ttf') format('truetype'),
+       url('../fonts/Helios/HeliosCond-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/roboto-regular.eot');
+    src: url('../fonts/Roboto/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/roboto-regular.woff') format('woff'),
+         url('../fonts/Roboto/roboto-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

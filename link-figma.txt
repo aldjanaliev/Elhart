@@ -3,7 +3,7 @@ index.html 		главная
 about.html		о компании
   laboratory		поверочная лаборатория
 production.html		производство
-contacts.html		контакты
+contacts.html		контакты				сделано!
 
 
 catalog.html		Продукция - категории продукции
@@ -19,15 +19,20 @@ documents.html		Документация и ПО
 career.html		карьера - работа в ELHART
 students.html		студентам
 
-news.html		Новости 
-news-detail.html	Новость 	
+news.html		Новости 				сделано!
+news-detail.html	Новость 				сделано!
 
-404.html		404
-policy.html		Политика конфиденциальности
-agreement.html		Пользовательское соглашение
+404.html		404					сделано!
+policy.html		Политика конфиденциальности		сделано!
+agreement.html		Пользовательское соглашение		сделано!
 
-карьера -> специалистам		
 
+
+вопросы:
+карьера -> специалистам
+- news.html -  как выглядит фильтр в моб версии при выборе категорий
+- 404	    -  куда ведет "Обратиться в поддержку"
+- distribution - 2 версии макета
 
 
 https://www.figma.com/file/HkMFzOg7Us4U70NK6ymi75/Elhart-%E2%86%92-%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF-%7C-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-(Copy)?node-id=497%3A5958

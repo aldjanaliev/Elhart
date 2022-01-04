@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	//===== header slider========
   $('.head_slider').slick({
   	dots: true,
     infinite: false,
@@ -19,7 +20,9 @@ $(document).ready(function() {
 	  vertical: true,
 	  focusOnSelect: true,
 	});
+	//=======header slider end=========
 
+	//===========header menu===========
 	var scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 	
 	$('.head_menu-burger').on('click', function(event){
@@ -41,8 +44,9 @@ $(document).ready(function() {
 		$(this).toggleClass('head_menu-arrow__active');
 		$(this).prev('.head_submenu').slideToggle(300);
 	});
+	//===========header menu end===========
 
-
+	//===========lang-choose===========
 	$('#lang-choose .head_langs').on('click', f_lang);
     function f_lang(){
 	    if ($(this).hasClass('head_lang--passive')) {
@@ -57,24 +61,138 @@ $(document).ready(function() {
 	    }
 	    return false;
 	};
+	//===========lang-choose end===========
 
+	//===========search===========
 	$('.head_search-btn').on('click', function(event){
 		$('.head_search-input-wrap').slideToggle(100);
 	});
+	//===========search end===========
 
-
-
-
-
+	//===========policy===========
+	$('.policy_title').on('click', function(event){
+		$(this).toggleClass('policy_title__active');
+		$(this).next('.policy_content').slideToggle(300);
+	});
+	//===========policy end===========
   // $('.head_slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
   //  	let indexSubMenu = $('.head_slider').find(".slick-current").attr('data-slick-index');
   //  	$('.sub-submenu_list').removeClass('sub-submenu_list__active')
   //  	$('.sub-submenu_list').eq(indexSubMenu).addClass('sub-submenu_list__active');
   // });
 
-
-
 });
+
+	// =============== pagination =============
+		let paginationPrev = document.querySelector('.pagination_btn__prev')
+		let paginationNext = document.querySelector('.pagination_btn__next')
+		let paginationInputAll = document.querySelector('.pagination_all')
+		let paginationInputCurrent = document.querySelector('.pagination_current')
+		paginationNext.onclick = function () {
+			if(+paginationInputCurrent.value < +paginationInputAll.value - 1){
+				paginationInputCurrent.value++
+			}
+			else if(+paginationInputCurrent.value == +paginationInputAll.value - 1){
+				paginationInputCurrent.value++
+				paginationNext.classList.add("btn-disabled")
+			}
+			if(+paginationInputCurrent.value > 1){
+				paginationPrev.classList.remove("btn-disabled")
+			}
+			else{
+				paginationPrev.classList.add("btn-disabled")
+			}
+		}
+		paginationPrev.onclick = function () {
+			if(+paginationInputCurrent.value > 2){
+				paginationInputCurrent.value--
+			}
+			else if(+paginationInputCurrent.value == 2){
+				paginationInputCurrent.value--
+				paginationPrev.classList.add("btn-disabled")
+			}
+			if(+paginationInputCurrent.value < 14){
+				paginationNext.classList.remove("btn-disabled")
+			}
+		}
+
+		
+		let newsFilter = document.querySelectorAll('.news_list')
+		newsFilter.forEach(item => {
+			item.onclick = function () {
+				if(this.classList.contains('news_list__active')){
+					this.classList.remove('news_list__active')
+				}
+				else{
+					this.classList.add('news_list__active')
+				}
+			}
+		})
+		let newsFilterReset = document.querySelector('.news_list__reset')
+		newsFilterReset.onclick = function () {
+			newsFilter.forEach(item => {
+				item.classList.remove('news_list__active')
+			})
+		}
+
+
+
+
+	//===========yandex map===========
+	// ymaps.ready(function () {
+	//     var myMap = new ymaps.Map('map_office', {
+	//             center: [45.034808074593755,38.98482599999996],
+	//             zoom: 18
+	//         }, {
+	//             searchControlProvider: 'yandex#search'
+	//         }),
+	//         // Создаём макет содержимого.
+	//         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+	//             '<img src="img/map_office.svg" alt="" class="contacts_img">'
+	//         ),
+
+	//         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+	//             hintContent: 'Собственный значок метки',
+	//             balloonContent: 'Это красивая метка'
+	//         }, {
+	//             // Опции.
+	//             // Необходимо указать данный тип макета.
+	//             iconLayout: 'default#image',
+	//             // Своё изображение иконки метки.
+	//             iconImageHref: 'images/myIcon.gif',
+	//             // Размеры метки.
+	//             iconImageSize: [30, 42],
+	//             // Смещение левого верхнего угла иконки относительно
+	//             // её "ножки" (точки привязки).
+	//             iconImageOffset: [-5, -38]
+	//         }),
+
+	//         myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
+	//             hintContent: 'Собственный значок метки с контентом',
+	//             balloonContent: 'А эта — новогодняя',
+	//             iconContent: '12'
+	//         }, {
+	//             // Опции.
+	//             // Необходимо указать данный тип макета.
+	//             iconLayout: 'default#imageWithContent',
+	//             // Своё изображение иконки метки.
+	//             iconImageHref: 'images/ball.png',
+	//             // Размеры метки.
+	//             iconImageSize: [48, 48],
+	//             // Смещение левого верхнего угла иконки относительно
+	//             // её "ножки" (точки привязки).
+	//             iconImageOffset: [-24, -24],
+	//             // Смещение слоя с содержимым относительно слоя с картинкой.
+	//             iconContentOffset: [15, 15],
+	//             // Макет содержимого.
+	//             iconContentLayout: MyIconContentLayout
+	//         });
+
+	//     myMap.geoObjects
+	//         .add(myPlacemark)
+	//         .add(myPlacemarkWithContent);
+	// });
+	//===========yandex map end===========
 
 // // ================ modals ===============
 // let modalLogin = document.querySelector('#form_login')

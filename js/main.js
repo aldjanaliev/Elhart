@@ -77,54 +77,73 @@ $(document).ready(function() {
 	//===========policy end===========
 
 	//============validate form=================
-		let selector = document.querySelectorAll('input[type="tel"]');
-				let im = new Inputmask('+7 (999) 999-99-99');
-				im.mask(selector);
+		if(document.querySelector('#form')){
+			let selector = document.querySelectorAll('input[type="tel"]');
+					let im = new Inputmask('+7 (999) 999-99-99');
+					im.mask(selector);
 
-		const validation = new JustValidate('#form');
+			const validation = new JustValidate('#form');
 
-		validation
-			.addField('#name', [
-				{
-					rule: 'required',
-					errorMessage: 'Введите имя!',
-				},
-				{
-					rule: 'minLength',
-					value: 3,
-					errorMessage: 'Слишком короткое имя!',
-				},
-				{
-					rule: 'maxLength',
-					value: 30,
-					errorMessage: 'Слишком длинное имя!',
-				},
-			])
-			.addField('#tel', [
-				{
-					rule: 'required',
-					errorMessage: 'Введите номер телефона!',
-				},
-				{
-					rule: 'minLength',
-					value: 15,
-					errorMessage: 'Введите корректный номер!',
-				},
-			])
-			.addField('#email', [
-				{
-					rule: 'required',
-					errorMessage: 'Введите адрес почты!',
-				},
-				{
-					rule: 'email',
-					errorMessage: 'Неверный адрес почты!',
-				},
-			]);
+			validation
+				.addField('#name', [
+					{
+						rule: 'required',
+						errorMessage: 'Введите имя!',
+					},
+					{
+						rule: 'minLength',
+						value: 3,
+						errorMessage: 'Слишком короткое имя!',
+					},
+					{
+						rule: 'maxLength',
+						value: 30,
+						errorMessage: 'Слишком длинное имя!',
+					},
+				])
+				.addField('#tel', [
+					{
+						rule: 'required',
+						errorMessage: 'Введите номер телефона!',
+					},
+					{
+						rule: 'minLength',
+						value: 15,
+						errorMessage: 'Введите корректный номер!',
+					},
+				])
+				// .addField('#email', [
+				// 	{
+				// 		rule: 'required',
+				// 		errorMessage: 'Введите адрес почты!',
+				// 	},
+				// 	{
+				// 		rule: 'email',
+				// 		errorMessage: 'Неверный адрес почты!',
+				// 	},
+				// ])
+				// .addField('#company', [
+				// 	{
+				// 		rule: 'required',
+				// 		errorMessage: 'Введите наименование организации!',
+				// 	},
+				// 	{
+				// 		rule: 'minLength',
+				// 		value: 3,
+				// 		errorMessage: 'Слишком коротко!',
+				// 	},
+				// 	{
+				// 		rule: 'maxLength',
+				// 		value: 30,
+				// 		errorMessage: 'Слишком длинно!',
+				// 	},
+				// ])
+		}
 
 	//===== tripple_slider========
 	  $('.tripple_slider').slick({
 	  	dots: false,
+			arrows: true,
 	    infinite: false,
 	    adaptiveHeight: true,
 	    speed: 300,
@@ -132,10 +151,43 @@ $(document).ready(function() {
 	    slidesToScroll: 1,
 	    responsive: [
 	    {
+	      breakpoint: 980,
+	      settings: {
+    	  	arrows: false,
+	      }
+	    },
+	    {
 	      breakpoint: 790,
 	      settings: {
 	        slidesToShow: 2,
     	  	dots: true,
+    	  	arrows: false,
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        dots: true,
+	        arrows: false,
+	      }
+	    }]
+	  });
+	//=======tripple_slider end=========
+
+	//===== db_slider========
+	  $('.db_slider').slick({
+	  	dots: true,
+	    infinite: false,
+	    adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 2 ,
+	    slidesToScroll: 1,
+	    responsive: [
+	    {
+	      breakpoint: 980,
+	      settings: {
+    	  	arrows: false,
 	      }
 	    },
 	    {
@@ -143,11 +195,75 @@ $(document).ready(function() {
 	      settings: {
 	        slidesToShow: 1,
 	        arrows: false,
+	  		  adaptiveHeight: true,
 	        dots: true
 	      }
 	    }]
 	  });
-	//=======tripple_slider end=========
+	//=======db_slider end=========
+
+	//===== about_slider========
+	  $('.about_slider').slick({
+	  	dots: true,
+	    infinite: false,
+	    adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 2 ,
+	    slidesToScroll: 1,
+	    responsive: [
+	    {
+	      breakpoint: 980,
+	      settings: {
+    	  	arrows: false,
+	      }
+	    },
+	    {
+	      breakpoint: 791,
+	      settings: {
+	        slidesToShow: 1,
+	        arrows: false,
+	  		  adaptiveHeight: true,
+	        dots: true
+	      }
+	    }]
+	  });
+	//=======about_slider end=========
+
+	//===== single_slider========
+	  $('.single_slider').slick({
+	  	dots: true,
+	  	arrows: false,
+	    infinite: false,
+	    adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 1 ,
+	    slidesToScroll: 1,
+	  });
+	//=======single_slider end=======
+
+	//===== min_catalog========
+
+		$('.min_catalog').slick({
+	  	dots: true,
+	  	arrows: false,
+	    infinite: false,
+	    adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 2,
+	    slidesToScroll: 1,
+	    responsive: [
+	    {
+	      breakpoint: 790,
+	      settings: {
+	      	slidesToShow: 1,
+    	  	arrows: false,
+	      }
+	    }]
+  	})
+
+
+
+	//=======min_catalog end=========
 
 
   // $('.head_slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
@@ -224,6 +340,7 @@ $(document).ready(function() {
 					item.onclick = function () {
 						let readAllIndex = [...readAllBtn].indexOf(this)
 						readAllTxt[readAllIndex].style.height = "100%"
+						readAllTxt[readAllIndex].style.height = "100%"
 						this.style.display = "none"
 					}
 			})
@@ -239,7 +356,7 @@ $(document).ready(function() {
 					if(changeCityParrent.classList.contains('choose_items__close')){
 						changeCityParrent.classList.remove('choose_items__close')
 					}
-					else if(!changeCityParrent.classList.contains('choose_items__close')){
+					else {
 						changeCityItemTitle.style.display = "none"
 						changeCityItem.forEach(item => {
 							item.classList.remove('choose_item__active')
@@ -247,9 +364,6 @@ $(document).ready(function() {
 						this.classList.add('choose_item__active')
 						changeCityParrent.classList.add('choose_items__close')
 						changeCityParrent.scrollTop = 0
-
-
-
 					}
 				}
 			})
@@ -293,7 +407,7 @@ $(document).ready(function() {
 			        const scrollTarget = document.getElementById(href)
 			        const topOffset = document.querySelector('header').offsetHeight
 			        const elementPosition = scrollTarget.getBoundingClientRect().top
-			        const offsetPosition = elementPosition - topOffset
+			        const offsetPosition = elementPosition - topOffset - 20
 			        window.scrollBy({
 			            top: offsetPosition,
 			            behavior: 'smooth'
@@ -302,9 +416,48 @@ $(document).ready(function() {
 			})
 		}
 	
-	// 
+	// ============== tabs ===============
+		if(document.querySelector('.tabs')){
+			let tab = function(){
+				let tabBtn = [...document.querySelectorAll('.tabs_item')]
+				let tabBody = [...document.querySelectorAll('.tabs_body-in')]
+				let tabsWrap = document.querySelector('.tabs')
+				tabBtn.forEach(item => {
+					item.addEventListener('click', selectTab)
+				})
+				function selectTab() {
+					let tabBtnH = getComputedStyle(this).height
+					if(!this.classList.contains('tabs_item__active')) {
+						tabBtn.forEach(item => {
+							item.classList.remove('tabs_item__active')
+						})
+						tabBody.forEach(item => {
+							item.classList.remove('tabs_body-in__active')
+						})
+						this.classList.add('tabs_item__active')
+						tabBody[tabBtn.indexOf(this)].classList.add('tabs_body-in__active')
+						if(getComputedStyle(tabsWrap).flexDirection == 'column'){
+							
+							tabsWrap.style.height = tabBtnH
+						}
 
-	
+					}
+					else if(this.classList.contains('tabs_item__active') && getComputedStyle(tabsWrap).flexDirection == 'column'){
+						if(tabsWrap.offsetHeight < 70){
+							let tabsWrapH = 0
+							for(let i = 0; i < tabBtn.length; i++){
+								tabsWrapH =  tabsWrapH + tabBtn[i].offsetHeight
+							}
+							tabsWrap.style.height = tabsWrapH + 'px'
+						}
+						else{
+							tabsWrap.style.height = tabBtnH
+						}
+					}
+				}
+			}
+			tab()
+		}
 
 
 	//===========yandex map===========
@@ -402,17 +555,3 @@ $(document).ready(function() {
 
 
 
-// // =============== tabs =============
-// let tab = function(){
-// 	let tabBtn = document.querySelectorAll('.tab_item')
-// 	tabBtn.forEach(item => {
-// 		item.addEventListener('click', selectTab)
-// 	})
-// 	function selectTab() {
-// 		tabBtn.forEach(item => {
-// 			item.classList.remove('tab_item__active')
-// 		})
-// 		this.classList.add('tab_item__active')
-// 	}
-// }
-// tab()

@@ -12,7 +12,7 @@ catalog-detail.html 	картиочка товара			!
 	  
 applications.html	Отрасли применения			!сделано!
 
-distribution.html	где купить - Дистрибьюторы		!!вопрос!!
+distribution.html	где купить - Дистрибьюторы		!!       вопрос!!
 
 documents.html		Документация и ПО 			!
 

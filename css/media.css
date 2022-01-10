@@ -116,6 +116,17 @@
   .products .product_title{
     padding-top: 0;
   }
+  .catalog-sections_in .section_in-title{
+    padding-right: 0;
+  }
+  .catalog-sections_filter-btn-wrap{
+    position: static;
+    padding-bottom: 30px;
+  }
+  .filter-btn{
+    left: 0;
+    right: 0;
+  }
 }
 @media screen and (min-width: 980.1px) {
   .tabs_all{
@@ -648,7 +659,7 @@
   .choose_items__close{
     height: 59px;
   }
-  .catalog-sections_filter{
+  .filter-wrap{
     columns: 1;
     padding: 0;
     border-radius: 0;
@@ -890,6 +901,12 @@
   }
   .sub-title__bold{
     padding-bottom: 5px;
+  }
+  .filter-btns{
+    width: 100%;
+  }
+  .filter-btn{
+    justify-content: center;
   }
   .head_search-input-wrap{
     top: 100%;

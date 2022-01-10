@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	//===== header slider========
+	//===== nav slider========
 	  $('.head_slider').slick({
 	  	dots: true,
 	    infinite: false,
@@ -20,7 +20,7 @@ $(document).ready(function() {
 		  vertical: true,
 		  focusOnSelect: true,
 		});
-	//=======header slider end=========
+	//=======nav slider end=========
 
 	//===========header menu===========
 		var scrollWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -357,6 +357,27 @@ $(document).ready(function() {
 					}
 				}
 			})
+
+		// =============== filter-btn for catalog.html =============
+			if(document.querySelector('.filter-btns')){
+				let filterBtnOpen = document.querySelector('.filter-btn__open')
+				let filterBtnClose = document.querySelector('.filter-btn__close')
+				let filterBlock = document.querySelector('.filter_body')
+					filterBtnClose.onclick = function () {
+						this.classList.remove('filter-btn__active')
+						filterBtnOpen.classList.add('filter-btn__active')
+						filterBlock.classList.add('filter_body__active')
+						filterBlock.style.height = 0
+					}
+					filterBtnOpen.onclick = function () {
+						filterBtnClose.classList.add('filter-btn__active')
+						this.classList.remove('filter-btn__active')
+						filterBlock.classList.remove('filter_body__active')
+						let filterBlockHeight = document.querySelector('.filter-wrap').offsetHeight
+						filterBlock.style.height = filterBlockHeight + 'px'
+					}
+			}
+
 		}
 
 

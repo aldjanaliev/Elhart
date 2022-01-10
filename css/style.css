@@ -96,6 +96,11 @@ input, textarea{
 .btn_black:hover{
   color: #02906d;
 }
+.btn-tall{
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+}
 .arrow__bot{
   width: 11px;
   height: 13px;
@@ -1291,14 +1296,17 @@ footer{
   display: inline-block;
   transition: 0.3s;
 }
-.news_list__active{
+.news_list__active,
+.filter .filter_list__active{
   background: #02906D;
   color: #fff;
   position: relative;
   padding-right: 41px;
 }
 .news_list__active::before,
-.news_list__active::after{
+.news_list__active::after,
+.filter .filter_list__active::before,
+.filter .filter_list__active::after{
   content: "";
   position: absolute;
   width: 2px;
@@ -1310,7 +1318,8 @@ footer{
   right: 16px;
   transform: rotate(45deg);
 }
-.news_list__active::after{
+.news_list__active::after,
+.filter .filter_list__active::after{
   transform: rotate(-45deg);
 }
 .news_list__title{
@@ -1758,6 +1767,8 @@ footer{
 }
 .db-btn{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .about_items-content{
   align-self: center;
@@ -1909,4 +1920,83 @@ footer{
 }
 .slider-count{
   display: none;
+}
+
+/*=========products======*/
+.products{
+  display: flex;
+  margin: -10px;
+  flex-wrap: wrap;
+}
+.products .product-wrap{
+  width: 25%;
+  padding: 10px;
+}
+.products .product-in{
+  flex-direction: column;
+  justify-content: start;
+}
+.products .product_content{
+  width: 100%;
+}
+.products .product_cart-ic{
+  background: #fff;
+}
+.products .product_title{
+  padding-top: 30px;
+}
+.products .product_img-wrap{
+  align-self: start;
+}
+/*======catalog-sections-wrap=====*/
+.catalog-sections-wrap{
+  display: flex;
+  margin: -10px;
+  flex-wrap: wrap;
+}
+.catalog-section-wrap{
+  width: 50%;
+  padding: 10px;
+}
+.catalog-section-wrap .product_cart-ic{
+  background: #fff;
+}
+
+.catalog-sections_filter{
+  padding: 20px 30px;
+  border: 1px solid #E5E6E9;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px rgba(44, 44, 44, 0.11);
+  border-radius: 12px;
+  color: rgba(20, 20, 20, 0.7);
+  font-size: 14px;
+  font-weight: 700;
+  columns: 2;
+}
+.filter{
+  break-inside: avoid;
+  padding: 10px;
+}
+.filter_title{
+  text-transform: uppercase;
+  display: block;
+  padding-bottom: 12px;
+}
+.filter_menu{
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter_list{
+  line-height: 24px;
+  padding: 6px 17px;
+  background: #F5F6F6;
+  border-radius: 6px;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.filter_list:hover{
+  background: #02906D;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.06);
+  color: #fff;
 }

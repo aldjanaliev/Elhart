@@ -242,7 +242,6 @@ $(document).ready(function() {
 	//=======single_slider end=======
 
 	//===== min_catalog========
-
 		$('.min_catalog').slick({
 	  	dots: true,
 	  	arrows: false,
@@ -260,9 +259,6 @@ $(document).ready(function() {
 	      }
 	    }]
   	})
-
-
-
 	//=======min_catalog end=========
 
 
@@ -328,6 +324,39 @@ $(document).ready(function() {
 					item.classList.remove('news_list__active')
 				})
 			}
+		}
+
+	// =============== filter for catalog.html =============
+		if(document.querySelector('.filter')){
+			let simpleFilter = document.querySelectorAll('.filter_list')
+			let simpleFilterAll = document.querySelector('.filter_list__all')
+			simpleFilter.forEach(item => {
+				item.onclick = function () {
+					let thisSiblings = [...this.parentNode.querySelectorAll('li')]
+					let thisSiblingsActive = [...this.parentNode.querySelectorAll('.filter_list__active')]
+					if(this.classList.contains('filter_list__active')){
+						if(!this.classList.contains('filter_list__all')){
+							if(thisSiblingsActive.length > 1 ){
+								this.classList.remove('filter_list__active')
+								this.parentNode.querySelector('.filter_list__all').classList.remove('filter_list__active')
+							}
+						}
+						else{
+							thisSiblings.forEach(item => item.classList.remove('filter_list__active'))
+							thisSiblings[1].classList.add('filter_list__active')
+						}
+					}
+					else{
+						if(this.classList.contains('filter_list__all')){
+							thisSiblings.forEach(item => item.classList.add('filter_list__active'))
+						}
+						else{
+							this.classList.add('filter_list__active')
+						}
+
+					}
+				}
+			})
 		}
 
 
@@ -407,11 +436,22 @@ $(document).ready(function() {
 			        const scrollTarget = document.getElementById(href)
 			        const topOffset = document.querySelector('header').offsetHeight
 			        const elementPosition = scrollTarget.getBoundingClientRect().top
-			        const offsetPosition = elementPosition - topOffset - 20
-			        window.scrollBy({
-			            top: offsetPosition,
+			        const offsetPositionFixed = elementPosition - topOffset - 20
+			        const offsetPositionStatic = elementPosition - 20
+			        const headerStyle = getComputedStyle(document.querySelector('header')).position
+			        if(headerStyle == 'fixed'){
+			        	window.scrollBy({
+			            top: offsetPositionFixed,
 			            behavior: 'smooth'
-			        })
+			        	})
+			        }
+			        else{
+			        	window.scrollBy({
+			            top: offsetPositionStatic,
+			            behavior: 'smooth'
+			        	})
+			        }
+			        
 			    })
 			})
 		}

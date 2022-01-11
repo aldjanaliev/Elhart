@@ -70,9 +70,9 @@ $(document).ready(function() {
 	//===========search end===========
 
 	//===========policy===========
-		$('.policy_title').on('click', function(event){
-			$(this).toggleClass('policy_title__active');
-			$(this).next('.policy_content').slideToggle(300);
+		$('.acc_title').on('click', function(event){
+			$(this).toggleClass('acc_title__active');
+			$(this).next('.acc_body').slideToggle(300);
 		});
 	//===========policy end===========
 
@@ -139,6 +139,41 @@ $(document).ready(function() {
 				// 	},
 				// ])
 		}
+
+	//===== catalog-detail slider========
+	  $('.detail_slider').slick({
+	    infinite: true,
+	    adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 1,
+	  	arrows: false,
+	    slidesToScroll: 1,
+	    dots: false,
+	    asNavFor: '.detail_slider-nav',
+	    responsive: [
+	    {
+	      breakpoint: 790,
+	      settings: {
+    	  	dots: true
+	      }
+	    }]
+	  });
+
+	  $('.detail_slider-nav').slick({
+		  slidesToShow: 4,
+		  asNavFor: '.detail_slider',
+		  infinite: true,
+		  focusOnSelect: true,
+	  	arrow: true,
+		  responsive: [
+	    {
+	      breakpoint: 790,
+	      settings: {
+    	  	arrow: false
+	      }
+	    }]
+		});
+	//=======catalog-detail slider end=========
 
 	//===== tripple_slider========
 	  $('.tripple_slider').slick({
@@ -261,6 +296,20 @@ $(document).ready(function() {
   	})
 	//=======min_catalog end=========
 
+	//=============catalog-detail-btn=================
+		$('.catalog-detail_btn').on('click', function(event){
+			$('.catalog-detail_btn').removeClass('catalog-detail_btn__close');
+			$(this).addClass('catalog-detail_btn__close');
+			$('.modify_close').slideToggle(300);
+		});
+	//=============catalog-detail-btn end=================
+
+	//=============catalog-detail-filter=================
+		$('.modify-choose_btn').on('click', function(event){
+			$(this).css('display', 'none')
+			$('.filter-modify').slideToggle(300);
+		});
+	//=============catalog-detail-filter end=================
 
   // $('.head_slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
   //  	let indexSubMenu = $('.head_slider').find(".slick-current").attr('data-slick-index');
@@ -379,7 +428,6 @@ $(document).ready(function() {
 			}
 
 		}
-
 
 	// =============== "read all" btn for laboratory.html =============
 		if(document.querySelectorAll('.read-all')){
@@ -518,6 +566,24 @@ $(document).ready(function() {
 				}
 			}
 			tab()
+		}
+
+	//=============== catalog-details-modify-filter =============	
+		if(document.querySelector('.filter-modify_choose')){
+			let filterModifyBtn = [...document.querySelectorAll('.filter-modify_txt')]
+			let filterModel = document.querySelector('.model_insert')
+			let filterSubModel = document.querySelector('.sub-model_insert')
+			filterModifyBtn.forEach(item => {
+				item.onclick = function () {
+					filterModifyBtn.forEach(item => {
+						item.classList.remove('filter-modify_txt__active')
+					})
+					this.classList.add('filter-modify_txt__active')
+					filterSubModel.innerText = this.innerText
+					let filterModelToInsert = this.closest('.filter-modify_type').querySelector('.filter-modify_model')
+					filterModel.innerText = filterModelToInsert.innerText
+				}
+			})
 		}
 
 

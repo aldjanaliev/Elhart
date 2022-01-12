@@ -22,6 +22,59 @@ $(document).ready(function() {
 		});
 	//=======nav slider end=========
 
+	//===== main page slider========
+	  $('.main_slider').slick({
+	  	dots: true,
+	    infinite: true,
+	    arrows: false,
+	    // adaptiveHeight: true,
+	    speed: 300,
+	    slidesToShow: 4,
+	    slidesToScroll: 1,
+	    responsive: [
+	    {
+	      breakpoint: 980,
+	      settings: {
+    	  	slidesToShow: 3,
+	        arrows: false,
+	      }
+	    },
+	    {
+	      breakpoint: 790,
+	      settings: {
+	        slidesToShow: 2,
+	        arrows: false,
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        arrows: false,
+	  		  adaptiveHeight: true,
+	      }
+	    }]
+	  });
+	//=======main page slider end=========
+
+	//===== main_bg slider========
+	  $('.bg_slider').slick({
+	  	dots: false,
+	    infinite: true,
+	    speed: 300,
+	    slidesToShow: 1,
+	    slidesToScroll: 1,
+	    responsive: [
+	    {
+	      breakpoint: 781,
+	      settings: {
+	        arrows: false,
+	        dots: true,
+	      }
+	    }]
+	  });
+	//=======main_bg  slider end=========
+
 	//===========header menu===========
 		var scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 		
@@ -665,6 +718,15 @@ $(document).ready(function() {
 					}
 				}
 			})
+		}
+
+	// ============ cookie ===============
+		if(document.querySelector('.cookie-wrap')){
+			let cookieBtn = document.querySelector('.cookie_btn')
+			let cookieBody = document.querySelector('.cookie-wrap')
+				cookieBtn.onclick = function () {
+					cookieBody.style.display = 'none'
+				}
 		}
 
 	// ============ distribution_card ===============

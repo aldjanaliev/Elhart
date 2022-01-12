@@ -469,12 +469,40 @@
 					<p class="not-found_txt">Возможно она была перемещена, или вы просто неверно указали адрес страницы</p>
 					<div class="not-found_btn-wrap">
 						<a href="catalog.html" class="btn">Перейти в каталог</a>
-						<a href="catalog.html" class="btn_black">Обратиться в поддержку</a>
+						<a href="#modal-form" class="btn_black" id="modal-form_btn">Обратиться в поддержку</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<div class="modal-form" id="modal-form">
+		<div class="form-wrap" id="form-wrap">
+			<form action="#" class="form" id="form" novalidate="novalidate">
+				<div class="form-close_btn"><i class="form-close_btn-ic"></i></div>
+				<span class="form_title">ОСТАЛИСЬ ВОПРОСЫ?</span>
+				<p class="form_desc txt__mid">Если вы не нашли ответ на инересующий вас вопрос, пожалуйста, оставьте свои контактные данные, и наш специалист свяжется с вами.</p>
+				<div class="form_inputs">
+					<div class="input-wrap">
+						<span class="input-name">Имя*</span>
+						<input type="text" placeholder="Имя" id="name" data-validate-field="name">
+					</div>
+					<div class="input-wrap">
+						<span class="input-name">Телефон*</span>
+						<input placeholder="Телефон" type="tel" id="tel" data-validate-field="tel" inputmode="text">
+					</div>
+					<div class="input-wrap textarea-wrap">
+						<span class="input-name">Сообщение*</span>
+						<textarea placeholder="Вопрос"></textarea>
+					</div>
+				</div>
+				<div class="form_submit">
+					<input type="submit" class="btn form_btn" value="Отправить">
+					<p class="form_txt">Нажимая кнопку «Задать вопрос», я даю согласие на обработку своих персональных данных в соответствии с <a href="policy.html">Политикой конфиденциальности</a></p>
+				</div>
+			</form>
+		</div>
+	</div>
 
 	<!-- =======FOOTER======== -->
 	<footer>

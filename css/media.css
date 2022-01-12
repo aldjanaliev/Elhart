@@ -1,4 +1,7 @@
 @media screen and (max-width: 1600px) {
+  header{
+    height: 169px;
+  }
   .db_slider .slick-prev{
     right: 66px;
     left: auto;
@@ -34,13 +37,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  .breadcrumbs-wrap{
+    margin-top: 169px;
+  }
 }
 @media screen and (max-width: 1280px) {
-  .tabs_body{
-    background: transparent;
-    border: none;
-    padding: 20px 0;
-  }
   .product-in{
     flex-direction: column;
   }
@@ -160,6 +161,31 @@
     max-width: 430px;
     width: 100%;
   }
+  .doc_catalog{
+    width: 33.33%;
+  }
+  .distribution{
+    flex-wrap: wrap;
+
+  }
+  .distribution_in-wrap{
+    width: 100%;
+  }
+  .section_side-card{
+    width: 100%;
+  }
+  .side-card{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+  }
+  .side-card_content{
+    width: calc(100% - 73px);
+  }
+  .side-card_txt{
+    padding-top: 0;
+  }
 }
 @media screen and (min-width: 980.1px) {
   .tabs_all{
@@ -167,9 +193,6 @@
   }
   .tabs{
    height: auto!important;
-  }
-  .head_nav, .head_submenu{
-    display: block!important;
   }
   .even-item .sub-section:nth-child(even) .section_content {
     order: -1;
@@ -188,6 +211,17 @@
   .about_slider-wrap{
     display: none;
   }
+  .doc_tabs .tabs{
+    margin: 0;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  .doc_tabs .tabs_item{
+    margin: 0;
+    width: 18%;
+    max-width: 283px;
+    padding: 10px 0;
+  }
 }
 @media screen and (max-width: 980px) {
   .tabs{
@@ -198,6 +232,7 @@
     overflow: hidden;
     height: 43px;
     transition: 0.3s;
+    margin: 0;
   }
   .tabs_item{
     margin: 0;
@@ -208,6 +243,11 @@
     background-color: #F5F5F5;
     transition: 0s;
     width: 100%;
+  }
+  .tabs_body{
+    background: transparent;
+    border: none;
+    padding: 20px 0;
   }
   .tabs_item__active{
     order: -1;
@@ -280,13 +320,9 @@
     padding: 0 20px;
   }
   header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     border-bottom: 1px solid #ECECEC;
+    height: 64px;
     background: #fff;
-    z-index: 100;
   }
   .header__static .head_nav{
     height: calc(100vh - 65px);
@@ -320,9 +356,6 @@
     right: 0;
     display: none;
     box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.05);
-  }
-  .head_submenu{
-    display: none;
   }
   .head_submenu__slider{
     display: none;
@@ -358,12 +391,14 @@
     flex-direction: column;
     margin: 0;
   }
+  .head_menu-list:hover .head_submenu{
+    transform: translate(0) scale(1)!important;
+  }
   .head_submenu{
+    display: none;
     position: static;
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
     text-align: left;
-    opacity: 1;
-    z-index: 10;
     box-shadow: none;
     padding: 12px 0 19px;
     transition: 0s;
@@ -512,6 +547,9 @@
     font-weight: normal;
     padding-bottom: 20px;
   }
+  .app .product-in .product_cart-ic {
+    background: #fff;
+  }
   .students_list{
     padding-bottom: 16px;
   }
@@ -609,6 +647,22 @@
   .detail_info-wrap{
     display: none;
   }
+  .doc_catalog-wrap{
+    margin: -10px;
+  }
+  .doc_catalog{
+    width: 50%;
+    padding: 10px;
+  }
+  .distribution_card-wrap{
+    display: none;
+  }
+  .distribution_card-sm{
+    display: block;
+  }
+  .distribution, .doc, .news-wrap-t{
+    padding-top: 30px;
+  }
 }
 @media screen and (min-width: 790px) {
   .feedback-modal{
@@ -632,6 +686,9 @@
   }
   .video_prev:hover .video_prev-hover{
     opacity: 1;
+  }
+  .filter_item-in{
+    height: auto!important;
   }
 }
 @media screen and (max-width: 790px) {
@@ -707,6 +764,12 @@
   }
   .filter{
     padding: 10px 0;
+  }
+  .active_list{
+    display: block;
+  }
+  .news_menu{
+    display: none;
   }
   body{
     line-height: 180%;
@@ -853,7 +916,6 @@
     width: 100%;
     max-width: 350px;
     padding: 0;
-    flex-direction: column;
   }
   .news_list{
     margin: 0;
@@ -862,9 +924,15 @@
     font-weight: 500;
     padding: 0 19px;
     line-height: 54px;
+    width: 100%;
   }
   .news_list__reset{
     position: static;
+    width: 100%;
+    padding: 0 19px;
+    line-height: 54px;
+    background: #F5F6F6;
+    text-align: left;
   }
   .news_list__title{
     display: none
@@ -1010,6 +1078,63 @@
   .filter-modify_info-txt{
     font-size: 16px;
   }
+  .doc_body .btn-download{
+    font-size: 12px;
+  }
+  .distribution_filter-wrap{
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+  .filter_item-in{
+    width: 100%;
+    max-width: 400px;
+    height: 52px;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .filter_item{
+    padding: 0 19px;
+    width: 100%;
+    margin: 0;
+    display: block;
+    border-bottom: 3px solid transparent;
+    transition: 0s;
+  }
+  .filter_item__active{
+    background: #F5F6F6;
+    color: #032019;
+    border-bottom: 3px solid #02906D;
+    order: -1;
+  }
+  .distribution_in-wrap{
+    padding-right: 0;
+  }
+  .distribution, .doc, .news-wrap-t{
+    padding-top: 10px;
+  }
+  .main_title{
+    padding: 20px 70px 20px 20px;
+    font-size: 16px;
+  }
+  .main_txt{
+    padding: 20px;
+    font-size: 14px;
+  }
+  .main_txt::before{
+    left: 20px;
+  }
+  .main_list-arrow{
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+  .main_list-arrow svg{
+    width: 15px;
+    height: 15px;
+    top: 13px;
+    left: 13px;
+  }
 }
 @media screen and (max-width: 480px) {
   .db_slider{
@@ -1104,17 +1229,17 @@
   .products .product-wrap{
     width: 100%;
   }
-  .product .product-in{
+  .products .product-in{
     flex-direction: row;
     flex-wrap: wrap;
     padding: 17px;
     word-wrap: break-word;
   }
-  .product .product_img-wrap{
+  .products .product_img-wrap{
     width: 104px;
     height: 100px;
   }
-  .product .product_content{
+  .products .product_content{
     width: calc(100% - 110px);
     padding: 0 0 0 15px;
     align-self: center;
@@ -1134,5 +1259,53 @@
   }
   .detail_link .product_cart-ic{
     display: block;
+  }
+  .doc_catalog-wrap{
+    margin: 0;
+  }
+  .doc_catalog{
+    width: 100%;
+    padding: 20px 0;
+  }
+  .doc_body .tabs_body{
+    padding-bottom: 0;
+  }
+  .doc .section_wrap__zero{
+    padding-bottom: 0;
+  }
+  .form_desc{
+    font-size: 14px;
+  }
+  .modal-form{
+    padding: 63px 0;
+  }
+  .modal-form .txt__mid{
+    display: none;
+  }
+  .modal-form .form_title{
+    padding-bottom: 10px;
+  }
+  .side-card_ic{
+    width: 40px;
+    height: 40px;
+    align-self: center;
+  }
+  .side-card_txt{
+    font-size: 14px;
+  }
+  .side-card_num{
+    font-size: 24px;
+  }
+  .side-card{
+    padding: 20px 30px;
+  }
+  .side-card_content {
+    width: calc(100% - 55px);
+  }
+  .ques_menu{
+    margin: 0 -20px;
+  }
+  .main_list{
+    margin-bottom: 10px;
   }
 }

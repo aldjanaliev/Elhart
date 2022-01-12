@@ -76,6 +76,32 @@ $(document).ready(function() {
 		});
 	//===========policy end===========
 
+	//===========news_list-sm===========
+		$('.toggle_list').on('click', function(event){
+			if($(this).hasClass('open_list')){
+				$('.close_list').addClass('active_list')
+				$(this).removeClass('active_list')
+				$('.news_menu').slideDown(300)
+			}
+			else{
+				$('.open_list').addClass('active_list')
+				$(this).removeClass('active_list')
+				$('.news_menu').slideUp(300)
+			}
+		});
+		$( window ).resize(function() {
+		  if($( window ).width() > 790){
+		  	$( ".news_menu" ).css( "display", "flex" );
+		  }
+		  else{
+		  	$( ".news_menu" ).css( "display", "none" );
+		  	$('.close_list').removeClass('active_list')
+		  	$('.open_list').addClass('active_list')
+		  }
+		});
+
+	//===========news_list-sm===========
+
 	//============validate form=================
 		if(document.querySelector('#form')){
 			let selector = document.querySelectorAll('input[type="tel"]');
@@ -318,6 +344,20 @@ $(document).ready(function() {
   // });
 
 });
+
+	// ================ ques_menu =============
+	if(document.querySelector('.ques_menu')){
+		let mainListClose = [...document.querySelectorAll('.main_list__close')]
+		let mainListBtn = document.querySelector('.ques_btn')
+		mainListBtn.onclick = function() {
+			mainListClose.forEach(item => {
+				let mainListH = item.offsetHeight
+				item.classList.remove('main_list__close')
+				this.style.display = 'none'
+			})
+		}
+
+	}
 
 	// =============== pagination =============
 		if(document.querySelector('.pagination_btn__prev')){
@@ -586,6 +626,82 @@ $(document).ready(function() {
 			})
 		}
 
+	//=============== modal-form =============	
+		if(document.querySelector('#modal-form')){
+			let modalBtn = document.querySelector('#modal-form_btn')
+			let modalBody = document.querySelector('#modal-form')
+			let modalClose = document.querySelector('.form-close_btn')
+				modalBtn.onclick = function(){
+					modalBody.style.display = 'block'
+					document.querySelector('.footer_mid-in').style.position = 'static'
+				}
+				modalClose.onclick = function(){
+					modalBody.style.display = 'none'
+					document.querySelector('.footer_mid-in').style.position = 'relative'
+				}
+		}
+
+	// ============ change - city ===============
+		if(document.querySelectorAll('.filter_item')){
+			let filterCityItem = [...document.querySelectorAll('.filter_item')]
+			filterCityItem.forEach(item => {
+				item.onclick = function () {
+					let filterCityBroItem = [...this.closest('.filter_item-wrap').children]
+					filterCityBroItem.forEach(item => {
+						item.classList.remove('filter_item__active')
+						this.classList.add('filter_item__active')
+					})
+					console.log(window.innerWidth)
+
+					if(window.innerWidth <= 790){
+						let filterCityParrent = this.closest('.filter_item-in')
+						let filterCityParrentHeight = this.closest('.filter_item-wrap').offsetHeight
+						if(filterCityParrent.offsetHeight == 52){
+							filterCityParrent.style.height = filterCityParrentHeight + 'px'
+						}
+						else{
+							filterCityParrent.style.height = '52px'
+						}
+					}
+				}
+			})
+		}
+
+	// ============ distribution_card ===============
+		if(document.querySelectorAll('.distribution_card-show')){
+			let distributionCardBtn = [...document.querySelectorAll('.distribution_card-show')]
+			distributionCardBtn.forEach(item => {
+				item.onclick = function () {
+					let distributionCard = this.closest('.distribution_card-wrap')
+					let distributionCardMap = distributionCard.querySelector('.distribution_map')
+					let distributionCardMapH = distributionCard.querySelector('.contacts_content').offsetHeight
+					console.log(distributionCardMap)
+
+					if(this.classList.contains('distribution_card-show__active')){
+						this.classList.remove('distribution_card-show__active')
+						distributionCardMap.style.height = 0
+						distributionCardMap.style.marginTop = 0
+					}
+					else{
+						this.classList.add('distribution_card-show__active')
+						distributionCardMap.style.height = distributionCardMapH + 'px'
+						distributionCardMap.style.marginTop = '30px'
+					}
+
+					// if(window.innerWidth <= 790){
+					// 	let filterCityParrent = this.closest('.filter_item-in')
+					// 	let filterCityParrentHeight = this.closest('.filter_item-wrap').offsetHeight
+					// 	if(filterCityParrent.offsetHeight == 52){
+					// 		filterCityParrent.style.height = filterCityParrentHeight + 'px'
+					// 	}
+					// 	else{
+					// 		filterCityParrent.style.height = '52px'
+					// 	}
+					// }
+				}
+			})
+		}
+
 
 	//===========yandex map===========
 	// ymaps.ready(function () {
@@ -642,43 +758,3 @@ $(document).ready(function() {
 	//         .add(myPlacemarkWithContent);
 	// });
 	//===========yandex map end===========
-
-// // ================ modals ===============
-// let modalLogin = document.querySelector('#form_login')
-// let modalLoginBtn = document.querySelector('#btn_login')
-// let modalSign = document.querySelector('#form_sign')
-// let modalSignBtn = document.querySelector('#btn_sign')
-// let modalCloseBtn = document.querySelectorAll('.modal_close')
-// modalLoginBtn.onclick = function (){
-// 	modalLogin.style.display = "block"
-// }
-// modalSignBtn.onclick = function (){
-// 	modalSign.style.display = "block"
-// }
-// modalCloseBtn.onclick = function(){
-// 	console.log("ass")
-// }
-// let close = function(){
-// 	modalCloseBtn.forEach(item => {
-// 		item.addEventListener('click', closeModal)
-// 	})
-// 	function closeModal(){
-// 		modalSign.style.display = "none"
-// 		modalLogin.style.display = "none"
-// 		repeatPass.style.display = "none"
-// 	}
-// }
-// close()
-
-
-
-// let loginInput = modalLogin.querySelectorAll('.form_input')
-// let loginBtn = modalLogin.querySelector('.head_btn--login')
-// loginBtn.onclick = function () {
-// 	if(loginInput[0].value !== '' && loginInput[1].value !== ''){
-// 		modalLogin.style.display = "none"
-// 	}
-// }
-
-
-

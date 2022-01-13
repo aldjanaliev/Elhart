@@ -75,6 +75,12 @@
     width: 280px;
     height: auto;
   }
+  .modal_map .tabs{
+    height: 400px!important;
+  }
+  .modal_map iframe{
+    height: 350px;
+  }
 }
 @media screen and (max-width: 1280px) {
   .product-in{
@@ -236,6 +242,9 @@
   }
   .history_card-title{
     font-size: 26px;
+  }
+  .filter-modify_btn-wrap #modal-form_btn{
+    display: none;
   }
 }
 @media screen and (min-width: 980.1px) {

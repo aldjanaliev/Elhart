@@ -2605,6 +2605,17 @@ footer{
   padding: 27px 40px;
   margin-bottom: 20px;
 }
+.detail_link-icons{
+  text-align: right;
+}
+.detail_link-ic{
+  display: inline-block;
+  margin-left: 15px;
+}
+.detail_link-ic svg{
+  width: 23px;
+  height: 23px;
+}
 .detail_link-title{
   text-transform: uppercase;
   font-size: 22px;

@@ -808,6 +808,9 @@
   .main_bg{
     margin-bottom: 30px;
   }
+  .detail_link-icons{
+    display: none;
+  }
 }
 @media screen and (min-width: 790px) {
   .feedback-modal{
@@ -1370,6 +1373,9 @@
   .cookie_btn{
     margin: auto;
     margin-top: 10px;
+  }
+  .choose_item{
+    padding: 0 19px;
   }
 }
 @media screen and (max-width: 480px) {

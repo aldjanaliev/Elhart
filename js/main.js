@@ -97,10 +97,19 @@ $(document).ready(function() {
 			$(this).toggleClass('head_menu-arrow__active');
 			$(this).prev('.head_submenu').slideToggle(300);
 		});
+
+		$(window).resize(function(){
+			if($( window ).width() > 960 && $('.head_menu-burger').css('display') !== 'block'){
+				$('.head_nav').css({'display':'block','padding-right':'0px'});
+			}
+			else if($( window ).width() < 960){
+				$('.head_nav').css('display','none');
+			}
+		})
 	//===========header menu end===========
 
 	//===========lang-choose===========
-		$('#lang-choose .head_langs').on('click', f_lang);
+		$('.lang-choose .head_langs').on('click', f_lang);
 	    function f_lang(){
 		    if ($(this).hasClass('head_lang--passive')) {
 		        $('.head_langs').removeClass('head_lang--active');

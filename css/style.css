@@ -827,6 +827,10 @@ header {
   padding: 39px 0 40px;
   line-height: 20px;
   font-size: 17px;
+  transition: 0.1s;
+}
+.head_menu-list:hover .head_menu-link{
+  color: #02906D;
 }
 .head_submenu{
   position: absolute;
@@ -1305,6 +1309,12 @@ footer{
 .policy_sub-list{
   padding-bottom: 25px;
 }
+.acc_title{
+  transition: 0.3s;
+}
+.acc_title:hover{
+  color: #02906D;
+}
 .policy .acc_title{
   display: block;
   padding: 13px 35px 13px 20px;
@@ -1356,6 +1366,9 @@ footer{
   padding-right: 5px;
 }
 /*====== 404 ========*/
+.not-found{
+  padding-top: 130px;
+}
 .not-found_title{
   text-align: center;
   background: url(../img/404.svg) center no-repeat;
@@ -2647,6 +2660,8 @@ footer{
 .doc_catalog{
   width: 25%;
   padding: 17px;
+  position: relative;
+  padding-bottom: 81px;
 }
 .doc_catalog-img{
   border-radius: 12px;
@@ -2676,6 +2691,12 @@ footer{
   margin: auto;
   display: block;
   line-height: 100%;
+}
+.doc_catalog-btn{
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: 0;
 }
 
 /*========= modal ==========*/
@@ -3398,7 +3419,6 @@ footer{
 .cookie-wrap{
   padding: 20px 0;
 }
-
 .modal-form .modal_map{
   border-radius: 12px;
   max-height: 730px;
@@ -3506,4 +3526,7 @@ footer{
 .modal-map{
   border-radius: 12px;
   overflow: hidden;
+}
+.p-10{
+  padding: 0 10px;
 }

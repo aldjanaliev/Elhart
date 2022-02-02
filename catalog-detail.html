@@ -380,7 +380,6 @@
 								<svg class="arrow__bot"><use xlink:href="img/ic_sprite__config.svg#ic_arrow-to"></use></svg>
 							</a>
 							<ul class="head_submenu">
-								<li class="head_submenu-list"><a href="specialist.html" class="head_submenu-link">Специалистам</a></li>
 								<li class="head_submenu-list"><a href="students.html" class="head_submenu-link">Студентам</a></li>
 							</ul>
 							<i class="head_menu-arrow"></i>
@@ -450,14 +449,33 @@
 		</div>
 	</header>
 
-	<!-- =======breadcrumbs======== -->
 	<div class="breadcrumbs-wrap">
 		<div class="container">
-			<ul class="breadcrumbs">
-				<li class="breadcrumbs_item"><a href="index.html" class="breadcrumbs_link">Главная<i class="breadcrumbs_arrow"></i></a></li>
-				<li class="breadcrumbs_item"><a href="index.html" class="breadcrumbs_link">Регуляторы и цифровые приборы <i class="breadcrumbs_arrow"></i></a></li>
-				<li class="breadcrumbs_item"><a href="index.html" class="breadcrumbs_link">ПИД-регуляторы<i class="breadcrumbs_arrow"></i></a></li>
-				<li class="breadcrumbs_item breadcrumbs_item__disabled"><span class="breadcrumbs_link">ECD1</span></li>
+			<ul class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li class="breadcrumbs_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="index.html" class="breadcrumbs_link" itemprop="item">
+						<span itemprop="name">Главная<i class="breadcrumbs_arrow"></i></span>
+						<meta itemprop="position" content="1" />
+					</a>
+				</li>
+				<li class="breadcrumbs_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="catalog.html" class="breadcrumbs_link" itemprop="item">
+						<span itemprop="name">Регуляторы и цифровые приборы<i class="breadcrumbs_arrow"></i></span>
+						<meta itemprop="position" content="2" />
+					</a>
+				</li>
+				<li class="breadcrumbs_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="catalog-sections.html" class="breadcrumbs_link" itemprop="item">
+						<span itemprop="name">ПИД-регуляторы<i class="breadcrumbs_arrow"></i></span>
+						<meta itemprop="position" content="3" />
+					</a>
+				</li>
+				<li class="breadcrumbs_item breadcrumbs_item__disabled" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<span itemprop="item">
+						<span class="breadcrumbs_link" itemprop="name">ECD1</span>
+						<meta itemprop="position" content="4" />
+					</span>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -465,14 +483,14 @@
 	<!-- =======catalog-detail======== -->
 	<section class="section_wrap section_wrap__zero">
 		<div class="container">
-			<div class="catalog-detail">
+			<div class="catalog-detail" itemscope itemtype="https://schema.org/Product">
 				<div class="catalog-detail_card">
 					<h3 class="section_in-title section_in-title__s">Универсальный ПИД-регулятор с монтажом на DIN-рейку ELHART серии ECD1</h3>
 					<div class="detail_slider-block">
 						<div class="detail_slider-wrap">
 							<div class="detail_slider">
 								<div class="detail_slide">
-									<img src="img/product-2.jpg" alt="">
+									<img src="img/product-2.jpg" alt="" itemprop="image">
 								</div>
 								<div class="detail_slide">
 									<img src="img/product-2.jpg" alt="">
@@ -538,8 +556,13 @@
 				</div>
 				<div class="catalog-detail_content section_wrap__zero">
 					<div class="detail">
-						<h3 class="section_in-title section_in-title__f">Универсальный ПИД-регулятор с монтажом на DIN-рейку ELHART серии ECD1</h3>
-						<p class="txt lab_txt">Универсальный ПИД-регулятор с креплением на DIN-рейку ELHART ECD1 предназначен для измерения температуры при помощи датчиков температуры с НСХ (по ГОСТ 6651-2009, ГОСТ Р 8.585-2001), измерения стандартных унифицированных сигналов по току и напряжению, регулирования различных технологических параметров по ON/OFF (двухпозиционному), П-, ПИ- или ПИД-закону регулирования.</p>
+						<h3 class="section_in-title section_in-title__f" itemprop="name">Универсальный ПИД-регулятор с монтажом на DIN-рейку ELHART серии ECD1</h3>
+						<p class="txt lab_txt" itemprop="description">Универсальный ПИД-регулятор с креплением на DIN-рейку ELHART ECD1 предназначен для измерения температуры при помощи датчиков температуры с НСХ (по ГОСТ 6651-2009, ГОСТ Р 8.585-2001), измерения стандартных унифицированных сигналов по току и напряжению, регулирования различных технологических параметров по ON/OFF (двухпозиционному), П-, ПИ- или ПИД-закону регулирования.</p>
+						<span itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
+							<meta itemprop="price" content="5590">
+							<meta itemprop="priceCurrency" content="RUB">
+							<link itemprop="availability" href="https://schema.org/InStock">
+						</span>
 						<span class="read-all">Читать все...</span>
 						<div class="detail_info-wrap">
 							<div class="detail_info">

@@ -380,7 +380,6 @@
 								<svg class="arrow__bot"><use xlink:href="img/ic_sprite__config.svg#ic_arrow-to"></use></svg>
 							</a>
 							<ul class="head_submenu">
-								<li class="head_submenu-list"><a href="specialist.html" class="head_submenu-link">Специалистам</a></li>
 								<li class="head_submenu-list"><a href="students.html" class="head_submenu-link">Студентам</a></li>
 							</ul>
 							<i class="head_menu-arrow"></i>
@@ -453,9 +452,19 @@
 	<!-- =======breadcrumbs======== -->
 	<div class="breadcrumbs-wrap">
 		<div class="container">
-			<ul class="breadcrumbs">
-				<li class="breadcrumbs_item"><a href="index.html" class="breadcrumbs_link">Главная<i class="breadcrumbs_arrow"></i></a></li>
-				<li class="breadcrumbs_item breadcrumbs_item__disabled"><span class="breadcrumbs_link">Контактная информация</span></li>
+			<ul class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+				<li class="breadcrumbs_item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<a href="index.html" class="breadcrumbs_link" itemprop="item">
+						<span itemprop="name">Главная<i class="breadcrumbs_arrow"></i></span>
+						<meta itemprop="position" content="1" />
+					</a>
+				</li>
+				<li class="breadcrumbs_item breadcrumbs_item__disabled" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+					<span itemprop="item">
+						<span class="breadcrumbs_link" itemprop="name">Контактная информация</span>
+						<meta itemprop="position" content="2" />
+					</span>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -465,25 +474,25 @@
 		<div class="container">
 			<div class="section_in contacts">
 				<div class="contacts_in-wrap">
-					<div class="sub-section contacts_in">
+					<div class="sub-section contacts_in" itemscope itemtype="https://schema.org/Organization">
 						<div class="contacts_content-wrap">
-							<h5 class="section_in-title contacts_title">Головной офис
+							<h5 class="section_in-title contacts_title" itemprop="name">Головной офис
 								<span class="contacts_title-ic">
 									<svg><use xlink:href="img/ic_sprite__config.svg#ic_picture-link"></use></svg>
 								</span>
 							</h5>
 							<div class="contacts_content">
 								<span class="contacts_desc">Звонок по России бесплатный</span>
-								<span class="contacts_txt">8-800-100-45-55</span>
+								<span class="contacts_txt" itemprop="telephone">8-800-100-45-55</span>
 							</div>
 							<div class="contacts_content">
 								<span class="contacts_desc">Адрес для почтовой корреспонденции</span>
-								<span class="contacts_txt">г. Краснодар, ул. Леваневского, 131</span>
+								<span class="contacts_txt" itemprop="address">г. Краснодар, ул. Леваневского, 131</span>
 							</div>
 							<div class="contacts_content contacts_content__map">
 								<div class="contacts_map-desc">
 									<div class="contacts_img-wrap">
-										<img src="img/mape_office.jpg" alt="" class="contacts_img">
+										<img src="img/mape_office.jpg" alt="" class="contacts_img" itemprop="image">
 									</div>
 									<a href="#" class="btn contacts_map-btn">построить маршрут</a>
 								</div>
@@ -493,25 +502,25 @@
 							</div>
 						</div>
 					</div>
-					<div class="contacts_in">
+					<div class="contacts_in" itemscope itemtype="https://schema.org/Organization">
 						<div class="contacts_content-wrap">
-							<h5 class="section_in-title contacts_title">Производство и отдел метрологии
+							<h5 class="section_in-title contacts_title" itemprop="name">Производство и отдел метрологии
 								<span class="contacts_title-ic">
 									<svg><use xlink:href="img/ic_sprite__config.svg#ic_picture-link"></use></svg>
 								</span>
 							</h5>
 							<div class="contacts_content">
 								<span class="contacts_desc">Звонок по России бесплатный</span>
-								<span class="contacts_txt">8-800-100-45-55</span>
+								<span class="contacts_txt" itemprop="telephone">8-800-100-45-55</span>
 							</div>
 							<div class="contacts_content">
 								<span class="contacts_desc">Адрес для почтовой корреспонденции</span>
-								<span class="contacts_txt">Краснодарский край, станица Новотитаровская, ул. Луначарского, 401В/1</span>
+								<span class="contacts_txt" itemprop="address">Краснодарский край, станица Новотитаровская, ул. Луначарского, 401В/1</span>
 							</div>
 							<div class="contacts_content contacts_content__map">
 								<div class="contacts_map-desc">
 									<div class="contacts_img-wrap">
-										<img src="img/map_delivery.jpg" alt="" class="contacts_img">
+										<img src="img/map_delivery.jpg" alt="" class="contacts_img" itemprop="image">
 									</div>
 									<a href="#" class="btn contacts_map-btn">построить маршрут</a>
 								</div>
